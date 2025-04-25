@@ -1,0 +1,99 @@
+Primes:p = 17 p=17, q = 11 q=11 → Modulus n= 17 × 11 = 187 n=17×11=187. 
+Euler’s Totient: ϕ ( n ) = ( 17 − 1 ) ( 11 − 1 ) = 160 ϕ(n)=(17−1)(11−1)=160. 
+Public Key (e): Chose e = 3 e=3 (since  e = 5 e=5 invalid;  gcd ( 5 , 160 ) ≠ 1 gcd(5,160)  =1). 
+Private Key (d): Solved 3 d ≡ 1 m o d 160 3d≡1mod160 →  d = 107 d=107. 
+Key Pair: Public = ( 187 , 3 ) (187,3), Private =  ( 187 , 107 ) (187,107). 
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+RSA Encryption Result
+-------------------
+Plaintext:  "SECRET"
+Public Key: (e=5, n=221)
+
+Conversion to Numeric:
+S -> 19
+E -> 5
+C -> 3
+R -> 18
+E -> 5
+T -> 20
+
+Encryption Process (C = P^e mod n):
+19^5 mod 221 = 35
+5^5 mod 221 = 31
+3^5 mod 221 = 22
+18^5 mod 221 = 80
+5^5 mod 221 = 31
+20^5 mod 221 = 146
+
+Final Ciphertext:
+35 31 22 80 31 146
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Ciphertext: 196
+Private Key: (d=53, n=221)
+
+Step 1: Simplify Modulus
+196 mod 221 = 196 (since 196 < 221)
+
+Step 2: Optimize Calculation
+Using Euler's theorem and exponentiation by squaring:
+196^53 mod 221
+= (13^4)^53 mod 221 [since 196 ≡ 13^2 mod 221]
+= 13^212 mod 221
+= 6 mod 221
+
+Step 3: Convert to Plaintext
+6 → 'F' in alphabet (A=1, B=2,..., F=6)
+
+Final Plaintext: 6 ('F')
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Symmetric: AES, ChaCha20 (fast, shared key).
+
+Asymmetric: RSA, ECC (key pairs, secure exchange).
+
+Hashing: SHA-256 (integrity checks, irreversible).
+
+Key Exchange: Diffie-Hellman (secure shared secrets).
+
+Hybrid Systems: Combine symmetric/asymmetric (e.g., TLS).
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+A. DES vs. AES:
+----------------
+1. DES (Data Encryption Standard):
+   - Key Size: 56-bit (vulnerable to brute-force).
+   - Speed: Slow in software due to Feistel structure.
+   - Security: Broken by modern standards (e.g., EFF's Deep Crack).
+   - Use Case: Legacy systems (replaced by 3DES/AES).
+
+2. AES (Advanced Encryption Standard):
+   - Key Sizes: 128, 192, or 256-bit (quantum-resistant at 256-bit).
+   - Speed: Faster, hardware-accelerated (AES-NI).
+   - Security: Resists known attacks (e.g., only side-channel risks).
+   - Use Case: TLS, VPNs, disk encryption (e.g., BitLocker).
+
+B. Hash Functions:
+------------------
+3. Definition:
+   - Converts input to fixed-length digest (e.g., SHA-256 → 256-bit).
+   - Ideal Properties: Preimage resistance, collision avoidance.
+
+4. Example: SHA-256
+   - Used in: Bitcoin (proof-of-work), Git commits, password storage.
+   - Secure Alternative: SHA-3 (Keccak) for future-proofing.
+
+C. Hybrid Cryptosystems:
+------------------------
+5. Why Hybrid?:
+   - Symmetric (AES): Encrypts bulk data efficiently.
+   - Asymmetric (RSA/ECC): Securely exchanges AES keys.
+   - Combines best of both worlds.
+
+6. Real-World Use:
+   - TLS: RSA/ECC for handshake, AES for session data.
+   - PGP: RSA for keys, AES for message encryption.
+
+7. Advantages:
+   - Performance: Symmetric encryption is faster.
+   - Security: Asymmetric avoids key distribution flaws.
+   - Scalability: No need to pre-share secrets.
+

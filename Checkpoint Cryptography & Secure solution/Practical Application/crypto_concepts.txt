@@ -1,0 +1,56 @@
+Practical Cryptographic Applications
+-----------------------------------
+
+1. Symmetric Encryption (AES Implementation)
+-------------------------------------------
+- Method: AES-128 in EAX mode (authenticated encryption)
+- Process:
+  * Generates random 128-bit key
+  * Encrypts with nonce for uniqueness
+  * Includes authentication tag
+- Security Note: Never reuse nonces with same key
+
+2. MD5 Hash Function
+--------------------
+- Properties:
+  * Fixed 128-bit output
+  * Fast computation
+  * Cryptographic weaknesses (collision vulnerabilities)
+- Use Cases:
+  * Checksum verification
+  * Non-security applications
+- Warning: Not for passwords/security-critical uses
+
+3. Digital Signatures
+---------------------
+Concept:
+- Mathematical scheme for verifying authenticity
+- Combines hashing and asymmetric crypto
+
+How It Works:
+1. Sender:
+   * Hashes message (SHA-256)
+   * Encrypts hash with private key → signature
+2. Recipient:
+   * Decrypts signature with sender's public key
+   * Compares with freshly computed message hash
+
+Key Properties:
+- Authenticity: Verifies sender identity
+- Integrity: Detects message tampering
+- Non-repudiation: Sender cannot deny sending
+
+Common Algorithms:
+- RSA-PSS
+- ECDSA
+- EdDSA
+
+Implementation Notes:
+- Always use secure padding (e.g., PKCS#1 v1.5)
+- Hash before signing (never sign raw messages)
+- Key sizes: ≥2048-bit RSA or ≥256-bit ECC
+
+Security Considerations:
+- Protect private keys
+- Use modern algorithms (avoid SHA1withRSA)
+- Regularly rotate keys

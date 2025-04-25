@@ -1,0 +1,43 @@
+Plaintext: "HELLO"
+
+Shift each letter forward by 3 (A→D, B→E, ..., Z→C).
+
+Encryption: H→K, E→H, L→O, O→R.
+
+Final Ciphertext: "KHOOR".
+
+Caesar Cipher Rule: Wraps past Z (e.g., X→A, Y→B, Z→C).
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Plaintext: "VWDQGD"
+
+Shift each letter backward by 3 (A→X, B→Y, C→Z, D→A, ..., Z→W).
+
+Decryption:
+
+V → S
+
+W → T
+
+D → A
+
+Q → N
+
+G → D
+
+D → A
+
+Result: "STANDA" (Likely intended: "STAND")
+
+Note: If the result seems odd, the shift may differ or extra padding (like "A") was added.
+-------------------------------------------------------------------------------------------------------------------------
+Plaintext: "OPENAI"
+
+Keyword (repeated): "CRYPTO"
+
+Encryption: Shift each plaintext letter by the keyword's corresponding letter (A=0, B=1, etc.).
+
+Calculations:
+
+O + C → Q, P + R → G, E + Y → C, N + P → C, A + T → T, I + O → W
+
+Ciphertext: "QGCCTW"

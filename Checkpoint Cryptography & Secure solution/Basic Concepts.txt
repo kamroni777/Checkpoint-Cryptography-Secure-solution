@@ -1,0 +1,19 @@
+Plaintext – The original, readable, or unencrypted data that is fed into an encryption algorithm. It can be any form of data, such as text, numbers, or binary code, that is meant to be protected.
+
+Ciphertext – The scrambled, unreadable output produced after encryption is applied to plaintext. It appears random and is unintelligible without the proper decryption key.
+
+Encryption – The process of converting plaintext into ciphertext using a cryptographic algorithm (cipher) and an encryption key. This ensures confidentiality by making the data unreadable to unauthorized parties.
+
+Decryption – The reverse process of encryption, where ciphertext is converted back into its original plaintext form using a decryption key and the appropriate algorithm. This restores the data to a readable state for authorized users.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Symmetric Cryptography uses a single shared key for both encryption and decryption (e.g., AES), making it fast but challenging for secure key exchange.
+
+Asymmetric Cryptography uses two keys (public & private), solving key distribution issues (e.g., RSA), but is slower.
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Confidentiality – Ensures that only authorized parties can access the encrypted data (e.g., through encryption algorithms like AES or RSA).
+
+Integrity – Protects data from unauthorized alteration, ensuring it remains unchanged during transmission or storage (e.g., using hash functions like SHA-256 or HMAC).
+
+Authentication – Verifies the identity of communicating parties to prevent impersonation (e.g., via digital signatures or certificates in protocols like SSL/TLS).
